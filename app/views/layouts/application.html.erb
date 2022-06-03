@@ -12,18 +12,23 @@
 
   <body>
     <header>
-     <% if user_signed_in? %>
-      <li>
-        <%= link_to "Log out",  destroy_user_session_path, method: :delete %>
-      </li>
-     <% else %>
-      <li>
-        <%= link_to "新規登録", new_user_registration_path %>
-      </li>
-      <li>
-        <%= link_to "ログイン", new_user_session_path %>
-      </li>
-     <% end %>
+     <nav class="navbar navbar-epand-lg navbar-light">
+       <% if user_signed_in? %>
+        <li>
+          <%= link_to "Home", root_path %>
+        </li>
+        <li>
+          <%= link_to "Log out",  destroy_user_session_path, method: :delete %>
+        </li>
+       <% else %>
+        <li>
+          <%= link_to "新規登録", new_user_registration_path %>
+        </li>
+        <li>
+          <%= link_to "ログイン", new_user_session_path %>
+        </li>
+       <% end %>
+     </nav>
     </header>
     <%= yield %>
   </body>

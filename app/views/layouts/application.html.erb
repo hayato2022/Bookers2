@@ -12,24 +12,51 @@
 
   <body>
     <header>
-     <nav class="navbar navbar-epand-lg navbar-light">
-       <% if user_signed_in? %>
-        <li>
-          <%= link_to "Home", root_path %>
-        </li>
-        <li>
-          <%= link_to "Log out",  destroy_user_session_path, method: :delete %>
-        </li>
-       <% else %>
-        <li>
-          <%= link_to "新規登録", new_user_registration_path %>
-        </li>
-        <li>
-          <%= link_to "ログイン", new_user_session_path %>
-        </li>
-       <% end %>
+     <nav class="navbar navbar-epand-lg navbar-dark bg-dark">
+      <div class="container">
+       <a class="navbar-brand" hlef="/"><span>Bookers</span></a>
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarNavDropdown">
+       <ul class="navbar-nav ml-auto">
+         <% if user_signed_in? %>
+          <li>
+            <%= link_to "Home", root_path %>
+          </li>
+          <li>
+            <%= link_to "Users", root_path %>
+          </li>
+          <li>
+            <%= link_to "Books", root_path %>
+          </li>
+          <li>
+            <%= link_to "Log out",  destroy_user_session_path, method: :delete %>
+          </li>
+         <% else %>
+          <li>
+            <%= link_to "新規登録", new_user_registration_path %>
+          </li>
+          <li>
+            <%= link_to "ログイン", new_user_session_path %>
+          </li>
+         <% end %>
+        </ul>
+       </div>
+      </div>
      </nav>
     </header>
+    <main class="mb-auto">
     <%= yield %>
+    </main>
+    <footer>
+      <div class="container mt-5">
+        <div class="row">
+          <div class="mx-auto">
+            <p>CopyRight Infratop.inc</p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

@@ -7,7 +7,7 @@ class BooksController < ApplicationController
     @book=Book.new(book_params)
     @book.user_id=current_user.id
     @book.save
-    redirect_to about_path
+    redirect_to book_path(@book.id)
   end
 
   def index
@@ -21,7 +21,7 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :body)
+    params.permit(:title, :body)
   end
 
 end

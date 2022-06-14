@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+.form_text {
+  display: block;
+  width: 100%;
+  border-radius: 0.25rem;
+ }

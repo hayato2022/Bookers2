@@ -6,7 +6,7 @@
       <%= form_with model: @user do |f| %>
       <div class="form-group">
         <%= f.label :Name %><br>
-        <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前", size: 49 %>
+        <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前", class: "form_text" %>
       </div>
       <div class="form-group">
         <%= f.label :Image %><br>
@@ -14,7 +14,7 @@
       </div>
       <div class="form-group">
         <%= f.label :Introduction %><br>
-        <%= f.text_area :introduction, id:"use_introduction", size: '51x2' %>
+        <%= f.text_area :introduction, id:"use_introduction", class: "form_text" %>
       </div>
       <div class="form-group">
         <%= f.submit "Update User", class: "btn btn-secondary" %>
